@@ -1,0 +1,111 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>찌리릿</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'img/찌리릿.png' %}" rel="icon">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'css/main.css' %}" rel="stylesheet">
+  <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+
+  <style>
+    .profile-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        overflow: hidden;
+        background-color: white;
+        width: 150px;  /* 컨테이너 크기를 더 작게 */
+        height: 150px; /* 컨테이너 크기를 더 작게 */
+    }
+
+    .profile-img img {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .profile-img img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+
+</head>
+
+<body class="index-page bg-dark text-white">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <a href="/">
+        <img src="{% static 'img/찌리릿.png' %}" alt="" class="img-fluid">
+      </a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="/home" class="active"><i class="bi bi-house navicon"></i>전체 방송</a></li>
+        <li><a href="#"><i class="bi bi-person navicon"></i>인기 클립(구현안됨)</a></li>
+        <li><a href="#"><i class="bi bi-file-earmark-text navicon"></i>카테고리(구현안됨)</a></li>
+        <li><a href="#"><i class="bi bi-images navicon"></i>팔로잉</a></li>
+        <li class="dropdown">
+          <a href="#">
+            <i class="bi bi-menu-button navicon"></i> 
+            <span>팔로잉 채널</span> 
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li><a href="/gumi">쭈꾸미</a></li>
+            <li><a href="https://chzzk.naver.com/6e06f5e1907f17eff543abd06cb62891">녹두로</a></li>
+            <li><a href="https://chzzk.naver.com/0b33823ac81de48d5b78a38cdbc0ab94">울프</a></li>
+            <li><a href="https://chzzk.naver.com/d5cd28965639143517aeeadce9d5260c">너구리굴이</a></li>
+          </ul>
+        <li class="dropdown">
+          <a href="#">
+            <i class="bi bi-menu-button navicon"></i> 
+            <span>추천 채널</span> 
+            <i class="bi bi-chevron-down toggle-dropdown"></i>
+          </a>
+          <ul>
+            <li><a href="/gumi">쭈꾸미</a></li>
+            <li><a href="https://chzzk.naver.com/75cbf189b3bb8f9f687d2aca0d0a382b">한동숙</a></li>
+            <li><a href="https://chzzk.naver.com/c0d9723cbb75dc223c6aa8a9d4f56002">허니츄러스</a></li>
+          </ul>
+      </ul>
+    </nav>
+  </header>
+  
+    <main class="main">
+      {% block content %}
+      {% endblock %}
+    </main>
+
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Main JS File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

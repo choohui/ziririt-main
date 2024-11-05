@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    
+  <!-- place for video-->
+  <div class="ratio ratio-16x9">
+    <video src="{% static 'video/broadcast.mp4' %}" controls>
+    </video>
+  </div>
+  <div class="container pt-3">  
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center">
+        <div class="me-3 position-relative">
+          <img src="{% static 'img/chugumi_profile.jpeg' %}" class="rounded-circle img-fluid" alt="Streamer Avatar" style="height: 100px;">
+          <div class="live-badge position-absolute">LIVE</div>
+        </div>
+        <div>
+          <h5 class="mb-0">쭈구미(zzugum2)</h5>
+          <span class="badge bg-success">종합 게임</span>
+          <span class="badge bg-secondary">회사 이름?</span>
+          <div class="text-muted mt-1">
+            <span>38명 시청 중</span>
+            <span class="mx-2">|</span>
+            <span>00:11:04 스트리밍 중</span>
+          </div>
+        </div>
+      </div>
+      <button type = 'button' onclick="location.href='board/' " class="btn btn-primary ms-auto">계시판</button> <!-- 버튼이 오른쪽 끝으로 이동 -->
+    </div>
+  </div>
+
+
+  <style>
+    .live-badge {
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+  </style>
+
+
+{% endblock %}

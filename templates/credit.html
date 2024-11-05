@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>엔딩 크레딧</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .credits-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .credits {
+            position: absolute;
+            bottom: -100%;
+            text-align: center;
+            animation: scrollCredits 20s linear infinite;
+        }
+
+        @keyframes scrollCredits {
+            0% {
+                bottom: -100%;
+            }
+            100% {
+                bottom: 100%;
+            }
+        }
+
+        h1, h2, p {
+            margin: 0;
+            padding: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="credits-container">
+    <div class="credits">
+        <h1>모의수사 화이팅</h1>
+        <h2>사이트 만든이</h2>
+        <p>추휘찬</p>
+        <h2>시킨이</h2>
+        <p>주도현</p>
+        <p>최보윤</p>
+        <p>박진희</p>
+        <p>이현정</p>
+        <p>노영준</p>
+        <p>김령현</p>
+
+        <h2>도운이</h2>
+        <p>유재서</p>
+        <p>우지윤</p>
+        <p>박동윤</p>
+        <p>박주원</p>
+        <p>송민건</p>
+        <p>유재현</p>
+        <p>정지호</p>
+        <p>이준하</p>
+        <p>이준혁</p>
+    </div>
+</div>
+
+</body>
+</html>
+{% endblock %}
